@@ -30,26 +30,27 @@ vector<int> smallerNumbersThanCurrent(vector<int>& nums) {
 
 return ans;
 }
+  
+//brute force
+
+vector<int> smallerNumbersThanCurrent(vector<int>& nums) {
+    int cnt=0;
+    vector<int> ans;
+    for(int i=0; i<nums.size(); i++){
+        cnt=0;
+        for(int j=0; j<nums.size(); j++){
+            if(nums[i]>nums[j] && nums[i]!=nums[j]){
+                cnt++;
+                // cout<<cnt<<"cnt"<<i<<"i"<<j<<"j"<<endl;
+            }
+        }
+        ans.push_back(cnt);
+
+
+    }
+
         
-
-// vector<int> smallerNumbersThanCurrent(vector<int>& nums) {
-//     int cnt=0;
-//     vector<int> ans;
-//     for(int i=0; i<nums.size(); i++){
-//         cnt=0;
-//         for(int j=0; j<nums.size(); j++){
-//             if(nums[i]>nums[j] && nums[i]!=nums[j]){
-//                 cnt++;
-//                 // cout<<cnt<<"cnt"<<i<<"i"<<j<<"j"<<endl;
-//             }
-//         }
-//         ans.push_back(cnt);
-
-
-//     }
-
-        
-// return ans;}
+return ans;}
 
 int main(){
     vector <int> nums={8,1,2,2,3};
